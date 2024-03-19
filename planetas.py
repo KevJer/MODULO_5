@@ -35,5 +35,17 @@ print("4. Mostrar platos del menu")
 opccion = int(input("seleccione la opccion"))
 if opccion == 1:
   addPlato = input("ingresa un nuevo plato para el menu")
+  Menu.append(addPlato)
 else:
-  pass
+  if opccion == 2:
+      search = input("Ingrese el plato a buscar")
+      print(Menu.index(search))
+  else:
+    if opccion == 3:
+      delete = input("Ingrese el pato a eliminar")
+      Menu.remove(delete)
+    else:
+      if opccion == 3:
+        m
+      else:
+        pass
