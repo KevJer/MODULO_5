@@ -9,6 +9,9 @@ class Laptop_Gaming(Laptop):
         super().__init__(marca, procesador, memoria, costo, impuesto)
         self.tarj_grafica = tarj_grafica
 
+    def __str__(self):
+        return f"marca:{self.marca}\n procesador: {self.precesador}\n   memoria:{self.memoria}\n tarj_grafica:{self.tarj_grafica}\n costo:{self.costo}"
+
     # sobreescritura de metodos
     def realizar_diagnostico_sistema(self):
         resultado_diagnostico = super().realizar_diagnostico_sistema()
@@ -30,5 +33,15 @@ class Laptop_Gaming(Laptop):
 
             resultados[juego] = f"{fps} FPS"
         return resultados
+    pass
 
+    def realizar_informe_uso(self):
+        informe = super().realizar_metodo_uso()
+        informe.update({
+            "Tipo" : "Gaming",
+            "Uso Recomendado": "JUego de video",
+            "Horas de  uso": 10,
+            "Recomedacion de software": {"antivirus", "virus"}
+        })
+        return informe
     pass

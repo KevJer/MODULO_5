@@ -26,6 +26,15 @@ class Laptop:
 
         return resultado
 
+    def realizar_metodo_uso(self):
+        reultado_informe = {
+            "Tipo" : "GEnerica",
+            "Uso Recomendado": "Tareas cotidianas",
+            "Horas de  uso": 5,
+            "Diagnostico actual": self.realizar_diagnostico_sistema()
+        }
+        return reultado_informe
+
     # Metodo Estatico
     @staticmethod
     def comparar_costo(laptop1, laptop2):
