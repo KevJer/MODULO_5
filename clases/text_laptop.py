@@ -1,12 +1,14 @@
 from laptop import Laptop
 from laptop_gaming import Laptop_Gaming
+from laptop_busnise import Laptop_Business
 
 
-laptop_juanito = Laptop_Gaming("MSI", "i7", 4, "RTX 8GB")
+# laptop_juanito = Laptop_Gaming("MSI", "i7", 4, "RTX 8GB")
 
-print(laptop_juanito.realizar_diagnostico_sistema())
+# print(laptop_juanito.realizar_diagnostico_sistema())
 # print(laptop_kevin.costo)
-
+laptop_empresa = Laptop_Business("HP", "i5", 16, 512, 8)
+print(laptop_empresa.realizar_diagnostico_sistema())
 
 # laptop_pepito = Laptop("lenovo", "17", 32)
 # laptop_maria = Laptop("lenovo", "19", 35,40)
