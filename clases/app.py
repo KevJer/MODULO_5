@@ -1,6 +1,9 @@
 from laptop_gaming import Laptop_Gaming
 import tkinter as tk
 from tkinter import ttk
+# from PIL import Image, ImageTk
+# import ramdon
+
 class App:
     def __init__(self, root):
         self.root = root
@@ -35,7 +38,19 @@ class App:
 
         ttk.Button(self.root, text="Agregar Laptop", command=self.agregar_laptop ).grid(row=5, column=0)
         pass
-
+    
+        # self.mostrar_laptops = tk.Text(self.root, height=10, width=50)
+        # self.mostrar_laptops. grid(row=6, column=0, columnspan=2)
+        
+        # self.canva = tk.Canvas(self.root, width=200, height=200)
+        # self.canva.grid(row=3, column=3, columnspan=6)
+        
+        
+        
+        
+        
+        
+        
     def agregar_laptop(self):
         nueva_laptop = Laptop_Gaming(self.marca.get(), self.procesador.get(), self.memoria.get(), self.tarj_grafica.get(), self.precio.get())
         self.laptops.append(nueva_laptop)
