@@ -61,7 +61,7 @@ class App:
         pass   
 
     def mostrar_imagen_aleatorias(self):
-        imagen_path = random.choices(self.imagenes) 
+        imagen_path = random.choice(self.imagenes) 
         imagen = Image.open(imagen_path)
         imagen= imagen.resize((200,200), Image.Resampling.LANCZOS)
         photo = ImageTk.PhotoImage(imagen)
