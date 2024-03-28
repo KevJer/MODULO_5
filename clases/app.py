@@ -9,7 +9,7 @@ class App:
     def __init__(self, root):
         self.root = root
         self.laptops = []
-        self.imagenes = []
+        self.imagenes = ["D:\\Kevin\\MODULO_5\\clases\\img\\Acer.jpg","D:\\Kevin\\MODULO_5\\clases\\img\\img-1.jpg"]
         
         root.title("Ingrear Datos")
         self.setup_ui()
@@ -43,7 +43,7 @@ class App:
         self.mostrar_laptops = tk.Text(self.root, height=10, width=50)
         self.mostrar_laptops. grid(row=6, column=0, columnspan=2)
         
-        self.canva = tk.Canvas(self.root, width=0, height=100)
+        self.canva = tk.Canvas(self.root, width=200, height=200)
         self.canva.grid(row=1, column=3, columnspan=6)
         
         pass
@@ -57,9 +57,19 @@ class App:
         self.laptops.append(nueva_laptop)
         print(self.laptops[0])
         self.mostrar_laptops.insert(tk.END, f"{nueva_laptop}")
-        
+        self.mostrar_imagen_aleatorias()
         pass   
 
+    def mostrar_imagen_aleatorias(self):
+        imagen_path = random.choices(self.imagenes) 
+        imagen = Image.open(imagen_path)
+        imagen= imagen.resize((200,200), Image.Resampling.LANCZOS)
+        photo = ImageTk.PhotoImage(imagen)
+        self.canva.create_image(0,0, anchor=tk.NW, image=photo)
+        self.canva.image=photo
+        pass
+    
+    
 root = tk.Tk()
 app = App(root)
 root.mainloop()
