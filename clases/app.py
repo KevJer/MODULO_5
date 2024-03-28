@@ -1,8 +1,9 @@
 from laptop_gaming import Laptop_Gaming
 import tkinter as tk
 from tkinter import ttk
-# from PIL import Image, ImageTk
-# import ramdon
+from PIL import Image, ImageTk
+import random
+
 
 class App:
     def __init__(self, root):
@@ -19,7 +20,7 @@ class App:
         self.marca = tk.StringVar()
         ttk.Entry(self.root, textvariable=self.marca).grid(row=0, column=1)
        
-        ttk.Label(self.root, text="Procesador").grid(row=1,column=0) 
+        ttk.Label(self.root, text="Procesador").grid(row=1,column=0)  
         self.procesador = tk.StringVar()
         ttk.Entry(self.root, textvariable=self.procesador).grid(row=1, column=1)
        
@@ -37,15 +38,15 @@ class App:
 
 
         ttk.Button(self.root, text="Agregar Laptop", command=self.agregar_laptop ).grid(row=5, column=0)
-        pass
     
-        # self.mostrar_laptops = tk.Text(self.root, height=10, width=50)
-        # self.mostrar_laptops. grid(row=6, column=0, columnspan=2)
+    
+        self.mostrar_laptops = tk.Text(self.root, height=10, width=50)
+        self.mostrar_laptops. grid(row=6, column=0, columnspan=2)
         
-        # self.canva = tk.Canvas(self.root, width=200, height=200)
-        # self.canva.grid(row=3, column=3, columnspan=6)
+        self.canva = tk.Canvas(self.root, width=0, height=100)
+        self.canva.grid(row=1, column=3, columnspan=6)
         
-        
+        pass
         
         
         
@@ -55,6 +56,8 @@ class App:
         nueva_laptop = Laptop_Gaming(self.marca.get(), self.procesador.get(), self.memoria.get(), self.tarj_grafica.get(), self.precio.get())
         self.laptops.append(nueva_laptop)
         print(self.laptops[0])
+        self.mostrar_laptops.insert(tk.END, f"{nueva_laptop}")
+        
         pass   
 
 root = tk.Tk()
